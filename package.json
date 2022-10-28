@@ -1,7 +1,7 @@
 {
-  "name": "team-profile-generator",
+  "name": "module-10-challenge-profile-generator-by-sangki-jun",
   "version": "1.0.0",
-  "description": "creates html file based on user input",
+  "description": "creates an HTML file that displays employee profile based on user input",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -14,8 +14,13 @@
     "url": "git+https://github.com/sangki810/Module-10-Challenge-Profile-Generator-by-Sangki-Jun.git"
   },
   "keywords": [
-    "\"profile\"",
-    "\"generator\""
+    "team",
+    "profile",
+    "generator",
+    "team",
+    "profile",
+    "generator",
+    "code"
   ],
   "author": "Sangki Jun",
   "license": "MIT",
@@ -24,7 +29,9 @@
   },
   "homepage": "https://github.com/sangki810/Module-10-Challenge-Profile-Generator-by-Sangki-Jun#readme",
   "dependencies": {
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
     "jest": "^26.0.1"
   }
 }
