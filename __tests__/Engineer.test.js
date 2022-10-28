@@ -3,13 +3,13 @@ const { expect } = require("@jest/globals");
 const Engineer = require("../lib/Engineer");
 
 // test for instantiating an engineer instance
-test("Can instantiate Engineer instnace", () => {
+test("Can instantiate Engineer instance", () => {
     const e = new Engineer();
     expect(typeof (e)).toBe("object");
 });
 
 // test for setters
-test("Can get github via getGithub()", () => {
+test("Can set github via contructor arguments", () => {
     // variable for test value
     const testValue = "sangki810";
     // vaiable for new engineer
@@ -19,7 +19,7 @@ test("Can get github via getGithub()", () => {
 });
 
 // test for getters
-test("Can get name via getGithub()", () => {
+test("Can get github via getGithub()", () => {
     // variable for test value
     const testValue = "sangki810";
     // variable for new egineer

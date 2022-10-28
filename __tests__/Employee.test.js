@@ -3,13 +3,13 @@ const { expect } = require("@jest/globals");
 const Employee = require("../lib/Employee");
 
 // test for instantiating an Employee instance
-test("Can instantiate Employee instnace", () => {
+test("Can instantiate Employee instance", () => {
     const e = new Employee();
     expect(typeof (e)).toBe("object");
 });
 
 // test for setters
-test("Can set name via construcror arguments", () => {
+test("Can set name via constructor arguments", () => {
     //variable for name
     const testValue = "Sangki";
     // variable for new Employee(passing in the variable for name here)
