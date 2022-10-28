@@ -155,8 +155,10 @@ function writeFile() {
   // informs user the file has been created
   console.log("Your team has been created!");
   // uses path to create file in dist folder named team.html, takes in array with user input employee pushed in
-  fs.writeFile(distPath, render(teamMembers), "UTF-8")
+  fs.writeFile(distPath, render(teamMembers), "UTF-8", (err) => {
+    if (err) throw err;
+  })
 }
 
-// calls create manager to initialize app
+// calls function to initialize app
 createManager();
