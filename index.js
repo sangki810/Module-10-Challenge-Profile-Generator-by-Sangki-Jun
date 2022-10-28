@@ -47,7 +47,7 @@ function createManager() {
     // pushes new manager into empty array
     teamMembers.push(manager);
     // calls function to add more employee types to team
-    createTeam();
+    addEmployeeTypes();
   });
 }
 
@@ -81,6 +81,8 @@ function createEngineer() {
     const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
     // pushes new engineer into empty array
     teamMembers.push(engineer);
+    // calls function to add more employee types to team
+    addEmployeeTypes();
   });
 }
 
@@ -114,19 +116,47 @@ function createIntern() {
     const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
     // pushes new intern into empty array
     teamMembers.push(intern);
+    // calls function to add more employee types to team
+    addEmployeeTypes();
   });
 }
 
-// function to
-function createTeam() {
+// function to add team members
+function addEmployeeTypes() {
+  // inquirer question
   inquirer.prompt([
     {
       type: "list",
-      name: "employeeType",
-      message: "Which type of employee do you want to add to the team?",
-      choices: ["Manager", "Engineer", "Intern", "None"]
-    }
-  ]).then(function (answers) {
-      
-  })
+      name: "addEmployeeTypes",
+      message: "Which type of employee do you like to add to the team next?",
+      choices: ["Engineer", "Intern", "Finish building team"],
+    },
+  // takes user choice
+  ]).then(function (userChoice) {
+    switch(userChoice.addEmployeeTypes) {
+      // if use chooses engineer, run function
+      case "Engineer":
+        createEngineer();
+        break;
+      // if user choose intern, run function
+      case "Intern":
+        createIntern();
+        break;
+      // if user choose to finish the profile, run function
+      case "Finish building team":
+        writeFile();
+        break;
+    };
+  });
 } 
+
+// function to create finished html file
+function writeFile() {
+  // informs user the file has been created
+  console.log("Your team has been created!");
+  // uses path to create file in dist folder named team.html, takes in array with user input employee pushed in
+  fs.writeFile(distPath, render(teamMembers), "UTF-8")
+}
+
+// calls create manager to initialize app
+createManager();
