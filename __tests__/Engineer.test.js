@@ -30,7 +30,7 @@ test("Can get github via getGithub()", () => {
 
 test("getRole() should return \"Engineer\"", () => {
     // vairable for new engineer
-    const e = new Employee("Sangki", 100, "sangki810@gmail.com", "sangki810");
+    const e = new Engineer("Sangki", 100, "sangki810@gmail.com", "sangki810");
     // set up expect and to be
     expect(e.getRole()).toBe("Engineer");
 });

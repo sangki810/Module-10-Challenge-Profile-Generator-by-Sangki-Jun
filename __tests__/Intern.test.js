@@ -30,7 +30,7 @@ test("Can get school via getSchool()", () => {
 
 test("getRole() should return \"Intern\"", () => {
     // vairable for new intern
-    const e = new Employee("Sangki", 100, "sangki810@gmail.com", "UCF");
+    const e = new Intern("Sangki", 100, "sangki810@gmail.com", "UCF");
     // set up expect and to be
     expect(e.getRole()).toBe("Intern");
 });
