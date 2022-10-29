@@ -44,6 +44,12 @@ To create a pull request:
 ## Tests
 Try to see if you can make a test for the page-template.js file that passes. Use the same format as my other tests to see if the correct data is getting pulled through.
 
+## Credits
+James L Jenks<br />
+Github: [JamesLJenks](https://github.com/JamesLJenks)<br />
+Repository: [Team-Profile-Generator](https://github.com/JamesLJenks/10_OOP-Team-Profile-Generator)<br />
+This repository helped me in structuring my own codes for the index.js and page-template.js files.
+
 ## License
 This project is licensed under:<br />
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<br />

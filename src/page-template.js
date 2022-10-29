@@ -1,8 +1,8 @@
 // creates html for all employee types
-const generateTeam = team => {
+const createTeam = team => {
 
     // create the html for manager 
-    const generateManager = manager => {
+    const createManager = manager => {
         return `<div class="card p-0 mx-3 shadow shadow-offset-down-md shadow-offset-left-sm" style="max-width: 18rem;">
                     <div class="card-header text-light bg-primary">
                         ${manager.getName()}<br />
@@ -19,7 +19,7 @@ const generateTeam = team => {
     };
 
     // create the html for engineers
-    const generateEngineer = engineer => {
+    const createEngineer = engineer => {
         return `
                 <div class="card p-0 mx-3 shadow shadow-offset-down-md shadow-offset-left-sm" style="max-width: 18rem;">
                     <div class="card-header text-light bg-primary">
@@ -36,8 +36,8 @@ const generateTeam = team => {
                 </div>`;
     };
 
-    // create the html for interns
-    const generateIntern = intern => {
+    // creates the html for interns
+    const createIntern = intern => {
         return `
                 <div class="card p-0 mx-3 shadow shadow-offset-down-md shadow-offset-left-sm" style="max-width: 18rem;">
                     <div class="card-header text-light bg-primary">
@@ -54,27 +54,28 @@ const generateTeam = team => {
                 </div>`;
     };
 
-    // joins the pieces of html created from user input into one
+    // joins the pieces of html created from user input and functions above into one array
     const htmlArr = [];
 
     htmlArr.push(team
         .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
+        .map(manager => createManager(manager))
     );
     htmlArr.push(team
         .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
+        .map(engineer => createEngineer(engineer))
         .join("")
     );
     htmlArr.push(team
         .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
+        .map(intern => createIntern(intern))
         .join("")
     );
 
     return htmlArr.join("");
 }
 
+// exports final html file with array from above rendering where ${createTeam(team)} is located
 module.exports = team => {
     return `<!DOCTYPE html>
     <html lang="en">
@@ -94,7 +95,7 @@ module.exports = team => {
     
         <main class="container">
             <section class="row justify-content-center">
-                ${generateTeam(team)}
+                ${createTeam(team)}
             </section>
         </main>
     </body>
