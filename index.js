@@ -33,7 +33,7 @@ function createManager() {
     {
       type: "input",
       name: "managerEmail",
-      message: "What is the email address of your manager?",
+      message: "What is the email address of your manager? (format: example@mail.com)",
     },
     {
       type: "input",
@@ -68,7 +68,7 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerEmail",
-      message: "What is the email address of your engineer?",
+      message: "What is the email address of your engineer? (format: example@mail.com)",
     },
     {
       type: "input",
@@ -103,7 +103,7 @@ function createIntern() {
     {
       type: "input",
       name: "internEmail",
-      message: "What is the email address of your intern?",
+      message: "What is the email address of your intern? (format: example@mail.com)",
     },
     {
       type: "input",
