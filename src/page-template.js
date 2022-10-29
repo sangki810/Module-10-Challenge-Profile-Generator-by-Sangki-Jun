@@ -54,24 +54,36 @@ const createTeam = team => {
                 </div>`;
     };
 
-    // joins the pieces of html created from user input and functions above into one array
+    // joins the pieces of html created from user input and functions above in an empty array
     const htmlArr = [];
 
+    // pushes into empty array above
     htmlArr.push(team
+        // filters for manager
         .filter(employee => employee.getRole() === "Manager")
+        // creates new array with just the content from createManager function
         .map(manager => createManager(manager))
     );
+    // pushes into array above now holding the manager content
     htmlArr.push(team
+        // filters for engineer
         .filter(employee => employee.getRole() === "Engineer")
+        // creates new array with just the content from createEngineer function
         .map(engineer => createEngineer(engineer))
+        // concats after manager content
         .join("")
     );
+    // pushes into array above holding manager content and now engineer content, if any
     htmlArr.push(team
+        // filters for intern
         .filter(employee => employee.getRole() === "Intern")
+        // creates new array with just the content from createIntern function
         .map(intern => createIntern(intern))
+        // concats after engineer content, if any
         .join("")
     );
-
+    
+    // returns the final array concatenated with manager, engineer (if there are any), and intern (if any) content
     return htmlArr.join("");
 }
 
