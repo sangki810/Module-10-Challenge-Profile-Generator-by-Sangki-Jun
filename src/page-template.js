@@ -3,12 +3,12 @@ const generateTeam = team => {
 
     // create the html for manager 
     const generateManager = manager => {
-        return `<div class="card p-0 mx-3" style="max-width: 18rem;">
+        return `<div class="card p-0 mx-3 shadow shadow-offset-down-md shadow-offset-left-sm" style="max-width: 18rem;">
                     <div class="card-header text-light bg-primary">
                         ${manager.getName()}<br />
                         <i class="fas fa-mug-hot"></i> ${manager.getRole()}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-light">
                         <ul class="list-group">
                             <li class="list-group-item">ID: ${manager.getId()}</li>
                             <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
@@ -21,7 +21,7 @@ const generateTeam = team => {
     // create the html for engineers
     const generateEngineer = engineer => {
         return `
-                <div class="card p-0 mx-3" style="max-width: 18rem;">
+                <div class="card p-0 mx-3 shadow shadow-offset-down-md shadow-offset-left-sm" style="max-width: 18rem;">
                     <div class="card-header text-light bg-primary">
                         ${engineer.getName()}<br />
                         <i class="fas fa-glasses"></i> ${engineer.getRole()}
@@ -39,7 +39,7 @@ const generateTeam = team => {
     // create the html for interns
     const generateIntern = intern => {
         return `
-                <div class="card p-0 mx-3" style="max-width: 18rem;">
+                <div class="card p-0 mx-3 shadow shadow-offset-down-md shadow-offset-left-sm" style="max-width: 18rem;">
                     <div class="card-header text-light bg-primary">
                         ${intern.getName()}<br />
                         <i class="fas fa-user-graduate"></i> ${intern.getRole()}
@@ -55,24 +55,24 @@ const generateTeam = team => {
     };
 
     // joins the pieces of html created from user input into one
-    const html = [];
+    const htmlArr = [];
 
-    html.push(team
+    htmlArr.push(team
         .filter(employee => employee.getRole() === "Manager")
         .map(manager => generateManager(manager))
     );
-    html.push(team
+    htmlArr.push(team
         .filter(employee => employee.getRole() === "Engineer")
         .map(engineer => generateEngineer(engineer))
         .join("")
     );
-    html.push(team
+    htmlArr.push(team
         .filter(employee => employee.getRole() === "Intern")
         .map(intern => generateIntern(intern))
         .join("")
     );
 
-    return html.join("");
+    return htmlArr.join("");
 }
 
 module.exports = team => {
@@ -83,14 +83,13 @@ module.exports = team => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link rel="stylesheet" href="./dist/style.css">
         <script src="https://kit.fontawesome.com/2f8e9dc640.js" crossorigin="anonymous"></script>
         <title>Team Profile</title>
     </head>
 
     <body>
         <header>
-            <h1 class="text-center text-light bg-danger pb-4 p-3" >My Team</h1>
+            <h1 class="text-center text-light bg-danger pb-4 p-3 mb-5" >My Team</h1>
         </header>
     
         <main class="container">
