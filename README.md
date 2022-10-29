@@ -28,7 +28,7 @@ Not required: <br />
 1. Open the integrated terminal and run the command `node index.js`.
 2. Answer the prompts in the terminal with the content you wish to be dislpayed on your HTML file. <br />
 
-A completed HTML file will be created once all the questions are answered. Make any changes you need or want to the file and save. For a more in-depth video instruction on how to use this code, please refer to this [link]().
+A completed HTML file will be created once all the questions are answered. Make any changes you need or want to the file and save. For a more in-depth video instruction on how to use this code, please refer to this [link](https://drive.google.com/file/d/1OGn7uWsyIDkRVvL5dM-K8uFMAqUTBOhB/view).
 
 ## Contributing
 If you have any good ideas or changes you want to share, you can create a pull request or add issues to the repository. You can also contact me using the information in the [Questions](#questions) section.<br />
